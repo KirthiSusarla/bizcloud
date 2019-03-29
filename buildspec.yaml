@@ -1,5 +1,5 @@
 version: 0.2
-
+#hey i want to make changes to my code ! to test the CodePipeline !!!!
 env:
     variables:
         S3_BUCKET: "camp-project-1"
@@ -30,7 +30,7 @@ phases:
         # Builds Angular application. You can also build using custom environment here like mock or staging
         - echo Build started on `date`
         - ng build
-
+    # always enter the name of ur s3 bucket where u have stored the angular application source code
     post_build:
         commands:
         # Clear S3 bucket.

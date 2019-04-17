@@ -2,7 +2,7 @@ version: 0.2
 #hey i want to make changes to my code ! to test the CodePipeline !!!!
 env:
     variables:
-        S3_BUCKET: "camp-project-1"
+        S3_BUCKET: "cicd-pipeline-project-final"
         #APP_NAME: "<APP_NAME_HERE>"
         BUILD_ENV : "prod"
 
@@ -33,12 +33,9 @@ phases:
     # always enter the name of ur s3 bucket where u have stored the angular application source code
     post_build:
         commands:
-        # Clear S3 bucket.
-        - aws s3 rm s3://camp-project-1 --recursive
-        #- aws s3 rm s3://camp-project-1 --recursive
-        - echo S3 bucket is cleared.
+       
         # Copy dist folder to S3 bucket, As of Angular 6, builds are stored inside an app folder in distribution and not at the root of the dist folder
-        - aws s3 cp dist/demoApp s3://camp-project-1 --recursive 
+        - aws s3 cp dist/demoApp s3://cicd-pipeline-project-final --recursive 
         #- aws s3 rm s3://camp-project-1 --recursive
         - echo Build completed on `date`
 

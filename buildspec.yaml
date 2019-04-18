@@ -42,7 +42,8 @@ phases:
         - ls
         - cd demoApp
         - ls
-        - aws s3 cp dist/demoApp s3://cicd-pipeline-project-final --recursive 
+        #- aws s3 cp dist/demoApp s3://cicd-pipeline-project-final --recursive 
+        - aws s3 cp . s3://cicd-pipeline-project-final --recursive 
         
        
         - echo Build completed on `date`

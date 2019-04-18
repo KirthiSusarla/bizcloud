@@ -34,8 +34,16 @@ phases:
     post_build:
         commands:
        
+        
         # Copy dist folder to S3 bucket, As of Angular 6, builds are stored inside an app folder in distribution and not at the root of the dist folder
+        - pwd
+        - ls 
+        - cd dist
+        - ls
+        - cd demoApp
+        - ls
         - aws s3 cp dist/demoApp s3://cicd-pipeline-project-final --recursive 
+        
        
         - echo Build completed on `date`
 

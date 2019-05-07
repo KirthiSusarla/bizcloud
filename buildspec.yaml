@@ -2,7 +2,7 @@ version: 0.2
 #hey i want to make changes to my code ! to test the CodePipeline !!!!
 env:
     variables:
-        S3_BUCKET: "cicd-pipeline-project-final"
+        S3_BUCKET: "cicd-pipeline-test-1"
         #APP_NAME: "<APP_NAME_HERE>"
         BUILD_ENV : "prod"
 
@@ -43,7 +43,7 @@ phases:
         - cd demoApp
         - ls
         #- aws s3 cp dist/demoApp s3://cicd-pipeline-project-final --recursive 
-        - aws s3 cp . s3://cicd-pipeline-project-final --recursive 
+        - aws s3 cp . s3://cicd-pipeline-test-1 --recursive 
         
        
         - echo Build completed on `date`

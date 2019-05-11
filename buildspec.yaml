@@ -2,7 +2,7 @@ version: 0.2
 #hey i want to make changes to my code ! to test the CodePipeline !!!!
 env:
     variables:
-        S3_BUCKET: "cicd-pipeline-test-1"
+        S3_BUCKET: "cicd-project-test-1"
         #APP_NAME: "<APP_NAME_HERE>"
         BUILD_ENV : "prod"
 
@@ -36,13 +36,13 @@ phases:
        
         
         # Copy dist folder to S3 bucket, As of Angular 6, builds are stored inside an app folder in distribution and not at the root of the dist folder
-        - pwd
-        - ls 
-        - cd dist
-        - ls
-        - cd demoApp
-        - ls
-        - aws s3 cp . s3://cicd-pipeline-test-1 --recursive 
+         #-pwd
+         #-ls 
+         # -cd dist
+         # -s
+         # -cd demoApp
+         # -ls
+        - aws s3 cp dist/demoApp/ s3://cicd-project-test-1 --recursive 
         #- aws s3 cp s3://cicd-pipeline-test-1 --recursive 
         
        
